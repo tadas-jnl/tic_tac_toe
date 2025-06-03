@@ -1,6 +1,5 @@
 from models import Player, Board
 lucky = [[1, 2, 3,], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
-test = [1, 2, 3, 4, 8]
 
 def luck_check(player, lucky=lucky):
     for lucky_set in lucky:
@@ -49,5 +48,3 @@ while not player_x.status or player_o.status:
         luck_check(plr)
         if plr.status: break
 
-# game_board.board_fill(game_board, test)
-# game_board.draw(game_board)
