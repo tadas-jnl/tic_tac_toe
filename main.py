@@ -14,7 +14,6 @@ def luck_check(player, lucky=lucky):
 
 def get_num(player):
     while True:
-        if len(all_numbers) == 9: print("Draw!")
         try:
             num = int(input(f"{player.name} turn: "))
             if num < 0 or num > 9:
@@ -38,7 +37,11 @@ print("This is 'Tic Tac Toe' game. You know the rules.")
 game_board.draw(game_board, all_numbers)
 
 while not player_x.status or player_o.status:
+    if len(all_numbers) == 9: break
     for plr in players:
+        if len(all_numbers) == 9:
+            print("Draw!")
+            break
         plr.numbers.append(get_num(plr))
         print("\n" * 10)
         game_board.board_fill(game_board, all_numbers, player_x.numbers, player_o.numbers)
