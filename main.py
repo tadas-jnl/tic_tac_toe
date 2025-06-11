@@ -1,5 +1,4 @@
 from models import Player, Board
-import pyinputplus as pyip
 from rich.console import Console
 
 lucky = [[1, 2, 3,], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
@@ -36,13 +35,13 @@ def get_num(player):
 def play():
     game_board = Board
     game_board.positions = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-    game_board.draw(game_board, all_numbers)
     all_numbers.clear()
     player_x.numbers = []
     player_o.numbers = []
     player_x.iswinner = False
     player_o.iswinner = False
     console.print("\n\n\n\n\nThis is 'Tic Tac Toe' game. You know the rules.\n", style="bold blue")
+    game_board.draw(game_board, all_numbers)
     while not player_x.iswinner or player_o.iswinner:
         if len(all_numbers) == 9: break
         for plr in players:
